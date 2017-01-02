@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<form [formGroup]="form" novalidate>
+  <div>
+    <label for="name">Name: </label>
+    <input formControlName="name" id="name" type="text"/>
+  </div>
+  <div>
+    <label for="name">Subject: </label>
+    <input formControlName="subject" id="subject" type="text"/>
+  </div>
+  <div>
+    <label for="name">Duration: </label>
+    <input formControlName="duration" id="duration" type="text"/>
+  </div>
+  <div>
+    <button type="submit" [disabled]="form.invalid" (click)="submit()">Submit</button>
+  </div>
+</form>
